@@ -18,8 +18,8 @@ namespace CreatingMethods
         //char upperCaseA;
         public static void ReturnValues(out char lowerCaseA, out char upperCaseA)
         {
-            Console.WriteLine(lowerCaseA); // Prints "a"
-            Console.WriteLine(upperCaseA); // Prints "A"
+            lowerCaseA = 'a';
+            upperCaseA = 'A';
         }
 
 
@@ -29,30 +29,14 @@ namespace CreatingMethods
         //float maxFloatValue;
         public static void ReturnValues(out float minFloatValue, out float maxFloatValue)
         {
-            if (minFloatValue > maxFloatValue )
-            {
-                minFloatValue += maxFloatValue
-                maxFloatValue = minFloatValue - maxFloatValue;
-                minFloatValue = minFloatValue - maxFloatValue;
-
-            }
-            Console.WriteLine(minFloatValue);
-            Console.WriteLine(maxFloatValue);
+            minFloatValue = float.MinValue; maxFloatValue = float.MaxValue;
         }
         // TODO #15. Add a static method here with name "ReturnValues" that gets "minIntValue" and "maxIntValue" parameters ("int" type) with out parameter modifier. The method should return int min and max values.
         //int minIntValue;
         //int maxIntValue;
         public static void ReturnValues(out int minIntValue, out int maxIntValue)
         {
-            if (minIntValue > maxIntValue)
-            {
-                minIntValue += maxIntValue
-                maxIntValue = minIntValue - maxIntValue;
-                minIntValue = minIntValue - maxIntValue;
-
-            }
-            Console.WriteLine(minIntValue);
-            Console.WriteLine(maxIntValue);
+            minIntValue = int.MinValue; maxIntValue = int.MaxValue;
         }
 
 
@@ -61,15 +45,7 @@ namespace CreatingMethods
         //int maxLongValue;
         public static void ReturnValues(out long minLongValue, out long maxLongValue)
         {
-            if (minLongValue > maxLongValue)
-            {
-                minLongValue += maxLongValue
-                maxLongValue = minLongValue - maxLongValue;
-                minLongValue = minLongValue - maxLongValue;
-
-            }
-            Console.WriteLine(minLongValue);
-            Console.WriteLine(maxLongValue);
+            minLongValue = long.MinValue; maxLongValue = long.MaxValue; 
         }
     }
 }
