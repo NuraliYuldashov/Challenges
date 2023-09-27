@@ -65,14 +65,14 @@ namespace ExceptionHandling.Tests
         [TestCase(4, ExpectedResult = 4)]
         public int CheckEvenNumberAndThrowException_ParameterIsEven_ReturnWithoutException(int evenNumber)
         {
-            return ThrowingExceptions.CheckEvenNumberAndThrowException(evenNumber);
+            return ThrowingExceptions.CheckEvenNumberAndThrowException(evenNumber, new ArgumentException(nameof(evenNumber)));
         }
 
         [TestCase(1)]
         [TestCase(3)]
         public void CheckEvenNumberAndThrowException_ParameterIsNotEven_ThrowsException(int evenNumber)
         {
-            Assert.Throws<ArgumentException>(() => ThrowingExceptions.CheckEvenNumberAndThrowException(evenNumber), "ThrowingExceptions.CheckEvenNumberAndThrowException should throw a ArgumentException.");
+            Assert.Throws<ArgumentException>(() => ThrowingExceptions.CheckEvenNumberAndThrowException(evenNumber, new ArgumentException(nameof(evenNumber))), "ThrowingExceptions.CheckEvenNumberAndThrowException should throw a ArgumentException.");
         }
 
         [TestCase(16, true, ExpectedResult = 16)]

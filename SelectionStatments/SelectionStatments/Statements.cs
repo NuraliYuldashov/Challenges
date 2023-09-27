@@ -1,4 +1,4 @@
-﻿b using System;
+﻿using System;
 
 namespace SelectionStatments
 {
@@ -15,7 +15,28 @@ namespace SelectionStatments
             // TODO #1: Add the method implementation. Restrictions:
             // - the method can only use the nested if...else statements;
             // - the method cannot use additional variables.
-            throw new NotImplementedException();
+            if (first >= second)
+            {
+                if (first >= third)
+                {
+                    Console.WriteLine($"Number {first} is the largest");
+                }
+                else
+                {
+                    Console.WriteLine($"Number {third} is the largest");
+                }
+            }
+            else
+            {
+                if (second >= third)
+                {
+                    Console.WriteLine($"Number {second} is the largest");
+                }
+                else
+                {
+                    Console.WriteLine($"Number {third} is the largest");
+                }
+            }
         }
 
         /// <summary>
@@ -29,7 +50,14 @@ namespace SelectionStatments
             // TODO #2: Add the method implementation. Restrictions:
             // - the method can only use the if...else statement and ?: ternary operators;
             // - the method cannot use additional variables.
-            throw new NotImplementedException();
+            Console.WriteLine(
+                                first >= second
+                                    ? first >= third
+                                        ? $"Number {first} is the largest"
+                                        : $"Number {third} is the largest"
+                                    : second >= third
+                                        ? $"Number {second} is the largest"
+                                        : $"Number {third} is the largest");
         }
 
         /// <summary>
@@ -43,7 +71,18 @@ namespace SelectionStatments
             // TODO #3: Add the method implementation. Restrictions:
             // - the method can only use the if...else statement and conditional logical operators;
             // - the method cannot use additional variables.
-            throw new NotImplementedException();
+            if (first >= second && first >= third)
+            {
+                Console.WriteLine($"Number {first} is the largest");
+            }
+            else if (second >= first && second >= third)
+            {
+                Console.WriteLine($"Number {second} is the largest");
+            }
+            else
+            {
+                Console.WriteLine($"Number {third} is the largest");
+            }
         }
 
         /// <summary>
@@ -57,7 +96,22 @@ namespace SelectionStatments
         public static void HowOldAreYouReactionWithCascadedIfElse(int userAge)
         {
             // TODO #4: Add the method implementation. Restrictions: the method can only use the cascaded if...else statement.
-            throw new NotImplementedException();
+            if (userAge >= 65)
+            {
+                Console.WriteLine("Enjoy your retirement!");
+            }
+            else if (userAge >= 21)
+            {
+                Console.WriteLine("Fancy an alcoholic beverage?");
+            }
+            else if (userAge >= 18)
+            {
+                Console.WriteLine("You're old enough to drive.");
+            }
+            else
+            {
+                Console.WriteLine("You are too young to drive, drink, or retire.")
+            }
         }
 
         /// <summary>
@@ -73,7 +127,30 @@ namespace SelectionStatments
         public static void WriteInformationAboutDailyDownloadsWithCascadedIfElse(int countOfDailyDownloads)
         {
             // TODO #5: Add the method implementation. Restrictions: the method can only use the cascaded if...else statement.
-            throw new NotImplementedException();
+            if (countOfDailyDownloads == 0)
+            {
+                Console.WriteLine("No downloads.");
+            }
+            else if (countOfDailyDownloads < 100)
+            {
+                Console.WriteLine("Daily downloads: 1-100.");
+            }
+            else if (countOfDailyDownloads < 1000)
+            {
+                Console.WriteLine("Daily downloads: 100-1,000.");
+            }
+            else if (countOfDailyDownloads < 10000)
+            {
+                Console.WriteLine("Daily downloads: 1,000-10,000.");
+            }
+            else if (countOfDailyDownloads < 100000)
+            {
+                Console.WriteLine("Daily downloads: 10,000-100,000.");
+            }
+            else if (countOfDailyDownloads >= 100000)
+            {
+                Console.WriteLine("Daily downloads: 100,000+.");
+            }
         }
         
         /// <summary>
@@ -87,7 +164,22 @@ namespace SelectionStatments
         public static void WriteTheInformationAboutDayWithIfElse(DayOfWeek dayOfWeek)
         {
             // TODO #6: Add the method implementation. Restriction: the method can only use the cascaded if...else statement and conditional logical operators.
-            throw new NotImplementedException();
+            if (dayOfWeek == DayOfWeek.Saturday || dayOfWeek == DayOfWeek.Sunday)
+            {
+                Console.WriteLine("The weekend.");
+            }
+            else if (dayOfWeek == DayOfWeek.Monday)
+            {
+                Console.WriteLine("The first day of the work week.");
+            }
+            else if (dayOfWeek == DayOfWeek.Friday)
+            {
+                Console.WriteLine("The last day of the work week.");
+            }
+            else
+            {
+                Console.WriteLine("The middle of the work week.");
+            }
         }
         
         /// <summary>
@@ -101,7 +193,22 @@ namespace SelectionStatments
         public static void WriteTheInformationAboutDayWithSwitchStatement(DayOfWeek dayOfWeek)
         {
             // TODO #7: Add the method implementation. Restriction: the method can only use the switch statement.
-            throw new NotImplementedException();
+            switch (dayOfWeek)
+            {
+                case DayOfWeek.Saturday:
+                case DayOfWeek.Sunday:
+                    Console.WriteLine("The weekend.");
+                    break;
+                case DayOfWeek.Monday:
+                    Console.WriteLine("The first day of the work week.");
+                    break;
+                case DayOfWeek.Friday:
+                    Console.WriteLine("The last day of the work week.");
+                    break;
+                default:
+                    Console.WriteLine("The middle of the work week.");
+                    break;
+            }
         }
 
         /// <summary>
@@ -121,7 +228,42 @@ namespace SelectionStatments
         public static string GetTypeOfIntegerWithCascadedIfElse(object arg)
         {
             // TODO #8: Add the method implementation. Restrictions: the method can only use the cascaded if...else statement.  
-            throw new NotImplementedException();
+            if (arg is sbyte)
+            {
+                return $"{arg} is sbyte.";
+            }
+            else if (arg is byte)
+            {
+                return $"{arg} is byte.";
+            }
+            else if (arg is short)
+            {
+                return $"{arg} is short.";
+            }
+            else if (arg is int)
+            {
+                return $"{arg} is int.";
+            }
+            else if (arg is long)
+            {
+                return $"{arg} is long.";
+            }
+            else if (arg is ushort)
+            {
+                return $"{arg} is ushort.";
+            }
+            else if (arg is uint)
+            {
+                return $"{arg} is uint.";
+            }
+            else if (arg is ulong)
+            {
+                return $"{arg} is ulong.";
+            }
+            else
+            {
+                return $"{arg} is not integer.";
+            }
         }
 
         /// <summary>
